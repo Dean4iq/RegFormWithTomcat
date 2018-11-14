@@ -5,21 +5,12 @@
          version="3.1">         
 
     <servlet>
-        <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>ua.training.service.AuthServletClass</servlet-class>
-    </servlet>     
-    <servlet>
         <servlet-name>GetDataServlet</servlet-name>
         <servlet-class>ua.training.service.GetDataServletClass</servlet-class>
     </servlet>
          
     <servlet-mapping>
-        <servlet-name>AuthServlet</servlet-name>
+        <servlet-name>GetDataServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetDataServlet</servlet-name>
-        <url-pattern>/servlet</url-pattern>
-    </servlet-mapping>
-         
 </web-app>

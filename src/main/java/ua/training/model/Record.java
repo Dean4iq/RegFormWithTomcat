@@ -1,6 +1,7 @@
 package ua.training.model;
 
 public class Record {
+    private int id;
     private String firstName;
     private String lastName;
     private String login;
@@ -10,9 +11,26 @@ public class Record {
     private String date;
     private Group group;
 
-    public Record(String firstName, String lastName, String nickname,
+    public Record() {
+    }
+
+    public Record(String firstName, String lastName, String login,
                   String comment, String phoneNumber, String email,
                   String date) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.login = login;
+        this.comment = comment;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.date = date;
+    }
+
+    public Record(int id,
+                  String firstName, String lastName, String nickname,
+                  String comment, String phoneNumber, String email,
+                  String date) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = nickname;
@@ -20,6 +38,14 @@ public class Record {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.date = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setGroup(Group group) {
@@ -58,21 +84,46 @@ public class Record {
         return group;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        stringBuilder.append("Person's data:").append("\n");
-        stringBuilder.append("Group: ").append(group).append("\n");
-        stringBuilder.append("First name: ").append(firstName).append("\n");
-        stringBuilder.append("Last name: ").append(lastName).append("\n");
-        stringBuilder.append("Nickname: ").append(login).append("\n");
-        stringBuilder.append("Phone number: ").append(phoneNumber).
-                                                append("\n");
-        stringBuilder.append("Email: ").append(email).append("\n");
-        stringBuilder.append("Date: ").append(date).append("\n");
-        stringBuilder.append("Comment: ").append(comment).append("\n");
-
-        return stringBuilder.toString();
+        return "Record{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", login='" + login + '\'' +
+                ", comment='" + comment + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", date='" + date + '\'' +
+                ", group=" + group +
+                '}';
     }
 }
