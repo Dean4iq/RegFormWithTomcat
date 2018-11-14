@@ -29,8 +29,9 @@ public class GetDataServletClass extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getAttribute("addValue") != null) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        if (request.getParameter("addValue") != null) {
             try {
                 recordBookDao.create(new Record(
                         request.getParameter("firstNameField"),
@@ -38,8 +39,7 @@ public class GetDataServletClass extends HttpServlet {
                         request.getParameter("loginField"),
                         request.getParameter("commentField"),
                         request.getParameter("phoneField"),
-                        request.getParameter("emailField"),
-                        request.getParameter("dateField")));
+                        request.getParameter("emailField")));
             } catch (IllegalLoginException ex) {
                 ex.printStackTrace();
             }

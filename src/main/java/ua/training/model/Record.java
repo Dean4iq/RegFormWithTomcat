@@ -26,10 +26,8 @@ public class Record {
         this.date = date;
     }
 
-    public Record(int id,
-                  String firstName, String lastName, String nickname,
-                  String comment, String phoneNumber, String email,
-                  String date) {
+    public Record(String firstName, String lastName, String nickname,
+                  String comment, String phoneNumber, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,7 +35,6 @@ public class Record {
         this.comment = comment;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.date = date;
     }
 
     public int getId() {
